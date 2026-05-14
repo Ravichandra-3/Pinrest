@@ -1,4 +1,4 @@
-export default function PinterestStyleLandingPage() {
+export default function Pinterest() {
   const cards = [
     {
       title: "Travel Ideas",
