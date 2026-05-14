@@ -1,0 +1,106 @@
+export default function PinterestStyleLandingPage() {
+  const cards = [
+    {
+      title: "Travel Ideas",
+      image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=800&auto=format&fit=crop",
+    },
+    {
+      title: "Architecture",
+      image: "https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=800&auto=format&fit=crop",
+    },
+    {
+      title: "Nature",
+      image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=800&auto=format&fit=crop",
+    },
+    {
+      title: "Street Photography",
+      image: "https://images.unsplash.com/photo-1514565131-fce0801e5785?q=80&w=800&auto=format&fit=crop",
+    },
+    {
+      title: "Food",
+      image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=800&auto=format&fit=crop",
+    },
+    {
+      title: "Technology",
+      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop",
+    },
+  ];
+
+  return (
+    <div className="min-h-screen bg-gray-100">
+      {/* Navbar */}
+      <nav className="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-200 px-6 py-4 flex items-center justify-between">
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-full bg-red-600 text-white flex items-center justify-center font-bold text-lg">
+            P
+          </div>
+          <h1 className="text-2xl font-bold tracking-wide">PinRest</h1>
+        </div>
+
+        <div className="hidden md:flex items-center gap-4 w-1/2">
+          <input
+            type="text"
+            placeholder="Search inspiration"
+            className="w-full rounded-full px-5 py-3 bg-gray-100 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-red-300"
+          />
+        </div>
+
+        <div className="flex items-center gap-3">
+          <button className="px-5 py-2 rounded-full bg-red-600 text-white font-medium hover:bg-red-700 transition">
+            Login
+          </button>
+          <button className="px-5 py-2 rounded-full bg-gray-200 hover:bg-gray-300 transition">
+            Sign Up
+          </button>
+        </div>
+      </nav>
+
+      {/* Hero */}
+      <section className="text-center py-16 px-6">
+        <h2 className="text-5xl md:text-6xl font-extrabold text-gray-800 leading-tight">
+          Discover Endless Inspiration
+        </h2>
+        <p className="mt-6 text-lg text-gray-600 max-w-2xl mx-auto">
+          Explore creative ideas, photography, travel inspiration, architecture,
+          design collections, and more.
+        </p>
+
+        <button className="mt-8 px-8 py-4 rounded-full bg-red-600 text-white text-lg font-semibold hover:bg-red-700 transition shadow-lg">
+          Explore Now
+        </button>
+      </section>
+
+      {/* Masonry Grid */}
+      <section className="px-6 pb-16">
+        <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-5 space-y-5">
+          {cards.map((card, index) => (
+            <div
+              key={index}
+              className="break-inside-avoid overflow-hidden rounded-3xl bg-white shadow-md hover:shadow-2xl transition duration-300"
+            >
+              <img
+                src={card.image}
+                alt={card.title}
+                className="w-full object-cover hover:scale-105 transition duration-300"
+              />
+
+              <div className="p-4">
+                <h3 className="text-lg font-semibold text-gray-800">
+                  {card.title}
+                </h3>
+                <p className="text-sm text-gray-500 mt-2">
+                  Curated visual inspiration and trending collections.
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="text-center py-8 text-gray-500 border-t border-gray-200 bg-white">
+        © 2026 PinRest — Inspiration Gallery Demo
+      </footer>
+    </div>
+  );
+}
